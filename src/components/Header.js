@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="header">
+    <div className="header top-header">
       <h1>
         NASA <span role="img" aria-label="rocket">🚀</span> APOD 
       </h1>
