@@ -10,7 +10,7 @@ function MainContentHeader( { date, title }) {
     }
 
   return (
-    <div className="header">
+    <div className="header main-content-header">
       <h1>
         {dateToDisplay}
       </h1>

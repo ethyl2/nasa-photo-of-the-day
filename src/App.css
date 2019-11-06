@@ -3,27 +3,11 @@
 .App {
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  background: url("https://images.unsplash.com/photo-1534841090574-cba2d662b62e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80");
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  animation: App-logo-spin infinite 40s linear;
 }
 
 @keyframes App-logo-spin {
@@ -56,6 +40,40 @@ p {
   line-height: 5rem;
 }
 
-.header {
-  margin: 3rem auto;
+.top-header {
+  margin: 0 auto 3rem auto;
+  background: black;
+  color: white;
+  padding: 2rem;
+}
+
+.main-content-header {
+  width: 80%;
+  margin: 2rem auto;
+  background: #0B3D91;
+  padding: 2rem;
+  color: white;
+}
+
+.photo-box {
+  width: 70%;
+  margin: 2rem auto;
+  background: #EDCAA6;
+  padding: 3rem;
+}
+
+.photo-box p::first-letter {
+  font-size: 200%;
+  color: #0B3D91;
+}
+
+.footer {
+  background: black;
+  color: white;
+  margin: 0 auto;
+  
+}
+
+.footer p {
+  font-size: 1.5rem;
 }
