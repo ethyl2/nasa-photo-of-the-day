@@ -7,7 +7,25 @@ import InputBox from './InputBox';
 
 function MainComponent() {
     const [photoData, setPhotoData] = useState({});
-    const [photoDate, setPhotoDate] = useState('2019-11-05');
+
+    // Get today's date as the initial date:
+    const today = new Date();
+    //console.log(today);
+    let month = '' + (today.getMonth() + 1),
+        day = '' + today.getDate(),
+        year = today.getFullYear();
+
+    if (month.length < 2) { 
+        month = '0' + month;
+    }
+    if (day.length < 2) { 
+        day = '0' + day;
+    }
+    
+    let currentDay = [year, month, day].join('-');
+    //console.log(currentDay);
+
+    const [photoDate, setPhotoDate] = useState(currentDay);
 
     useEffect(() => {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ&date=${photoDate}`)
@@ -22,10 +40,9 @@ function MainComponent() {
     }, [photoDate]);
 
 
-    const handleClick = (testStr) => {
-        console.log('clicked');
-        console.log(testStr);
-        setPhotoDate(testStr);
+    const handleClick = (newDateChosen) => {
+        console.log(newDateChosen);
+        setPhotoDate(newDateChosen);
     }
 
     //console.log(photoData);
