@@ -7,9 +7,10 @@ import InputBox from './InputBox';
 
 function MainComponent() {
     const [photoData, setPhotoData] = useState({});
+    const [photoDate, setPhotoDate] = useState('2019-11-05');
 
     useEffect(() => {
-        axios.get("https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ")
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ&date=${photoDate}`)
         .then(response => {
             //console.log(response.data);
             setPhotoData(response.data);
@@ -18,12 +19,13 @@ function MainComponent() {
         .catch(err => {
             console.log(err);
         })
-    }, []);
+    }, [photoDate]);
 
 
     const handleClick = (testStr) => {
         console.log('clicked');
         console.log(testStr);
+        setPhotoDate(testStr);
     }
 
     //console.log(photoData);
