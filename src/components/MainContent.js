@@ -1,14 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+import MainContentHeader from './MainContentHeader';
+import PhotoBox from './PhotoBox';
 
 function MainComponent() {
-  return (
-    <div className="main-component">
-      <h3>Date: </h3>
-      <h4>Title: </h4>
-      <p>Image will go here</p>
-      <p>Description will go here</p>
-    </div>
-  );
+    const [photoData, setPhotoData] = useState({});
+
+    useEffect(() => {
+        axios.get("https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ")
+        .then(response => {
+            //console.log(response.data);
+            setPhotoData(response.data);
+            
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }, []);
+
+    //console.log(photoData);
+
+    return (
+        <div className="main-component">
+            <MainContentHeader 
+                date={photoData.date}
+                title={photoData.title}
+            />
+            <PhotoBox
+                url={photoData.url}
+                title={photoData.title}
+                explanation={photoData.explanation} 
+            />
+        </div>
+    );
 }
 
 export default MainComponent;
