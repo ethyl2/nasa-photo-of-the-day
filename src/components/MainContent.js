@@ -3,6 +3,7 @@ import axios from "axios";
 
 import MainContentHeader from './MainContentHeader';
 import PhotoBox from './PhotoBox';
+import InputBox from './InputBox';
 
 function MainComponent() {
     const [photoData, setPhotoData] = useState({});
@@ -19,6 +20,12 @@ function MainComponent() {
         })
     }, []);
 
+
+    const handleClick = (testStr) => {
+        console.log('clicked');
+        console.log(testStr);
+    }
+
     //console.log(photoData);
 
     return (
@@ -32,6 +39,7 @@ function MainComponent() {
                 title={photoData.title}
                 explanation={photoData.explanation} 
             />
+            <InputBox handleClick={handleClick}/>
         </div>
     );
 }
