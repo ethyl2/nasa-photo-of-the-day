@@ -6,9 +6,27 @@ import {
     CarouselIndicators,
     CarouselCaption
   } from 'reactstrap';
+import styled from "styled-components";
 import axios from "axios";
 
 function CarouselSection() {
+
+    const CarouselDiv = styled.div`
+    width: 80%;
+    margin: 10rem auto;
+    background: #0B3D91;
+    padding: 2rem;
+    h2 {
+        color: #EDCAA6;
+        margin: 3rem auto;
+    }
+    img {
+        border: 1rem solid white;
+        max-width: 100%;
+        max-height: 58vh;
+    }
+  `;
+
     const [photoData1, setPhotoData1] = useState({});
     const [photoData2, setPhotoData2] = useState({});
     const [photoData3, setPhotoData3] = useState({});
@@ -104,28 +122,44 @@ function CarouselSection() {
 
     const slides = items.map((item) => {
         return (
-          <CarouselItem
-            onExiting={() => setAnimating(true)}
-            onExited={() => setAnimating(false)}
-            key={item.src}
-          >
-            <img src={item.src} alt={item.altText} />
-            <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
-          </CarouselItem>
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item.caption}
+            >
+                <img src={item.src} alt={item.altText} />
+                <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
+            </CarouselItem>
         );
     });
 
     return (
-        <Carousel
-        activeIndex={activeIndex}
-        next={next}
-        previous={previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-      </Carousel>
+        <CarouselDiv >
+            <h2>A Sample of APODs from the Past</h2>
+            <Carousel
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+            >
+                <CarouselIndicators 
+                    items={items} 
+                    activeIndex={activeIndex} 
+                    onClickHandler={goToIndex} />
+
+                {slides}
+
+                <CarouselControl 
+                    direction="prev" 
+                    directionText="Previous" 
+                    onClickHandler={previous} />
+
+                <CarouselControl 
+                    direction="next" 
+                    directionText="Next" 
+                    onClickHandler={next} />
+
+            </Carousel>
+        </CarouselDiv>
     ); 
 }
 export default CarouselSection;
