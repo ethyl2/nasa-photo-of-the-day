@@ -10,8 +10,6 @@ function MainComponent() {
 
     // Get today's date as the initial date:
     const today = new Date();
-
-    console.log(today.getDate());
     let month = '' + (today.getMonth() + 1),
         day = '' + (today.getDate()),
         year = today.getFullYear();
@@ -24,10 +22,7 @@ function MainComponent() {
     }
     
     const currentDay = [year, month, day].join('-');
-    //console.log(currentDay);
-
     const [photoDate, setPhotoDate] = useState(currentDay);
-    console.log(photoDate);
 
     useEffect(() => {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ&date=${photoDate}`)

@@ -13,8 +13,10 @@ function MainContentHeader( { date, title }) {
   `;
 
   let dateToDisplay = date;
+  
   if (date) {
-    const myDateObj = new Date(date);
+    let myDateObj = new Date(date);
+    myDateObj.setDate(myDateObj.getDate() + 1);
     const options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' };
     dateToDisplay = myDateObj.toLocaleDateString("en-US", options);
     }
@@ -22,7 +24,7 @@ function MainContentHeader( { date, title }) {
   return (
     <PhotoHeader >
       <h1>
-        {dateToDisplay}
+        {dateToDisplay ? dateToDisplay: date}
       </h1>
       <h2>
         {title}
