@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
 import CarouselSection from "./components/CarouselSection";
+import LocationDiv from "./components/LocationDiv";
 import styled from "styled-components";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Header />
       <MainContent />
       <CarouselSection />
+      <LocationDiv />
       <Footer />
     </AppDiv>
   );

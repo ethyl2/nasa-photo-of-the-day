@@ -6,7 +6,7 @@ function InputBox( {handleClick}) {
     const InputBoxDiv = styled.div`
         background: #CD321D;
         width: 40%;
-        margin: 2rem auto;
+        margin: 6rem auto;
         padding: 0.25rem 1rem 2rem 1rem;
         color: white;
         h3 {
