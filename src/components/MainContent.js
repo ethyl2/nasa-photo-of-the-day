@@ -22,7 +22,7 @@ function MainComponent() {
         day = '0' + day;
     }
     
-    let currentDay = [year, month, day].join('-');
+    const currentDay = [year, month, day].join('-');
     //console.log(currentDay);
 
     const [photoDate, setPhotoDate] = useState(currentDay);

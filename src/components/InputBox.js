@@ -4,7 +4,7 @@ function InputBox( {handleClick}) {
 
     return (
         <div className="input-box">
-            <p> Choose a Different Day </p>
+            <h3> Choose a Different Day </h3>
             <form>
                 <label>Date: </label>
             <input name="newDate" type="date" id="user-input-date" />
