@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MainContent from "./components/MainContent";
-import Carousel from "./components/Carousel";
+import CarouselSection from "./components/CarouselSection";
 import styled from "styled-components";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     <AppDiv >
       <Header />
       <MainContent />
-      <Carousel />
+      <CarouselSection />
       <Footer />
     </AppDiv>
   );

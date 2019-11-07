@@ -12,6 +12,9 @@ function PhotoBox(props) {
       font-size: 200%;
       color: #0B3D91;
     }
+    img {
+      max-width: 100%;
+    }
   `;
 
   return (
