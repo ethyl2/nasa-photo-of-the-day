@@ -28,13 +28,6 @@ p {
   line-height: 5rem;
 }
 
-.top-header {
-  margin: 0 auto 3rem auto;
-  background: black;
-  color: white;
-  padding: 2rem;
-}
-
 .main-content-header {
   width: 80%;
   margin: 2rem auto;
