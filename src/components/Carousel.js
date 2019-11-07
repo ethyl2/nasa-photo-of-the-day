@@ -40,7 +40,7 @@ function Carousel() {
     useEffect(() => {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ&date=${photoDate2}`)
         .then(response => {
-            setPhotoData1(response.data); 
+            setPhotoData2(response.data); 
         })
         .catch(err => {
             console.log(err);
@@ -50,7 +50,7 @@ function Carousel() {
     useEffect(() => {
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=lzlI8r4upKEp4bFovBRvoTweZT9jpHGQyxuNDZyQ&date=${photoDate3}`)
         .then(response => {
-            setPhotoData1(response.data); 
+            setPhotoData3(response.data); 
         })
         .catch(err => {
             console.log(err);
@@ -61,6 +61,9 @@ function Carousel() {
         <div>
             <h1>Carousel goes here
             </h1>
+            <img src={photoData1.url} alt="Carousel image 1" />
+            <img src={photoData2.url} alt="Carousel image 2" />
+            <img src={photoData3.url} alt="Carousel image 3" />
             </div>
     )
 }
