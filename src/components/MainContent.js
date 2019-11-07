@@ -38,7 +38,7 @@ function MainComponent() {
 
 
     const handleClick = (newDateChosen) => {
-        console.log(newDateChosen);
+        //console.log(newDateChosen);
         setPhotoDate(newDateChosen);
     }
 
