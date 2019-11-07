@@ -1,6 +1,16 @@
 import React from "react";
+import styled from "styled-components";
 
 function MainContentHeader( { date, title }) {
+
+  const PhotoHeader = styled.div`
+    width: 80%;
+    margin: 2rem auto;
+    background: #0B3D91;
+    padding: 2rem;
+    color: white;
+    line-height: 5rem;
+  `;
 
   let dateToDisplay = date;
   if (date) {
@@ -10,14 +20,14 @@ function MainContentHeader( { date, title }) {
     }
 
   return (
-    <div className="header main-content-header">
+    <PhotoHeader >
       <h1>
         {dateToDisplay}
       </h1>
       <h2>
         {title}
       </h2>
-    </div>
+    </PhotoHeader>
   );
 }
 
